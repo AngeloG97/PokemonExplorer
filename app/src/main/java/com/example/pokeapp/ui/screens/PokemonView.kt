@@ -474,7 +474,7 @@ fun StatBar(label: String, value: Int?, color: Color) {
         Text(
             text = label,
             fontWeight = FontWeight.Bold,
-            modifier = Modifier.width(75.dp),
+            modifier = Modifier.width(85.dp),
             fontSize = 14.sp
         )
         Text(
