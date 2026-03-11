@@ -51,6 +51,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.animation.core.EaseInOutSine
@@ -467,26 +468,29 @@ fun StatBar(label: String, value: Int?, color: Color) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(horizontal = 16.dp),
+            .padding(horizontal = 10.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
         Text(
             text = label,
             fontWeight = FontWeight.Bold,
-            modifier = Modifier.width(85.dp),
+            modifier = Modifier.width(75.dp),
             fontSize = 14.sp
         )
         Text(
             text = "${value ?: "?"}",
             modifier = Modifier.width(36.dp),
+            textAlign = TextAlign.End,
             fontSize = 14.sp
         )
         Box(
             modifier = Modifier
+                .padding(start = 10.dp)
                 .weight(1f)
                 .height(12.dp)
                 .clip(RoundedCornerShape(6.dp))
                 .background(Color.Gray.copy(alpha = 0.3f))
+
         ) {
             Box(
                 modifier = Modifier
