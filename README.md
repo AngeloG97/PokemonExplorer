@@ -1,4 +1,4 @@
-# Pokémon Explorer
+# Pokémon Explorer - v1.0
 
 An Android app that lets users browse Pokémon by type, search by name, and view detailed stats — built with Kotlin, Jetpack Compose, and the PokéAPI.
 
@@ -65,3 +65,7 @@ Coil Compose 2.7.0
 Lifecycle ViewModel Compose 2.8.7
 Lifecycle ViewModel KTX 2.8.7
 ```
+
+# Pokémon Explorer - v2.0
+
+Now allows the user to choose among all 18 Pokémon types, and displays more Pokémon stats: Sp.Attack, Sp.Defense and Speed are included.
