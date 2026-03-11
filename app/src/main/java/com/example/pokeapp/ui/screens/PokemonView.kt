@@ -127,7 +127,7 @@ fun PokemonView(viewModel: PokemonViewModel, modifier: Modifier = Modifier) {
             ) {
                 Column {
                     Row {
-                        viewModel.types.take(5).forEach { type ->
+                        viewModel.types.take(9).forEach { type ->
                             Button(
                                 onClick = { viewModel.selectType(type) },
                                 colors = ButtonDefaults.buttonColors(
@@ -149,7 +149,7 @@ fun PokemonView(viewModel: PokemonViewModel, modifier: Modifier = Modifier) {
                         }
                     }
                     Row {
-                        viewModel.types.drop(5).forEach { type ->
+                        viewModel.types.drop(9).forEach { type ->
                             Button(
                                 onClick = { viewModel.selectType(type) },
                                 colors = ButtonDefaults.buttonColors(
@@ -396,7 +396,7 @@ fun PokemonView(viewModel: PokemonViewModel, modifier: Modifier = Modifier) {
                         .fillMaxWidth(0.85f)
                         .clip(RoundedCornerShape(16.dp))
                         .background(Color(0xFF2A2A2A))
-                        .padding(20.dp)
+                        .padding(16.dp)
                         .clickable(
                             indication = null,
                             interactionSource = remember { MutableInteractionSource() }
@@ -428,12 +428,22 @@ fun PokemonView(viewModel: PokemonViewModel, modifier: Modifier = Modifier) {
                     val hp = pokemon.stats.find { it.stat.name == "hp" }?.baseStat
                     val attack = pokemon.stats.find { it.stat.name == "attack" }?.baseStat
                     val defense = pokemon.stats.find { it.stat.name == "defense" }?.baseStat
+                    val specialAttack = pokemon.stats.find { it.stat.name == "special-attack" }?.baseStat
+                    val specialDefense = pokemon.stats.find { it.stat.name == "special-defense" }?.baseStat
+                    val speed = pokemon.stats.find { it.stat.name == "speed" }?.baseStat
 
                     StatBar("HP", hp, typeColor)
                     Spacer(modifier = Modifier.height(8.dp))
-                    StatBar("ATK", attack, typeColor)
+                    StatBar("Attack", attack, typeColor)
                     Spacer(modifier = Modifier.height(8.dp))
-                    StatBar("DEF", defense, typeColor)
+                    StatBar("Defense", defense, typeColor)
+                    Spacer(modifier = Modifier.height(8.dp))
+                    StatBar("Sp.Attack", specialAttack, typeColor)
+                    Spacer(modifier = Modifier.height(8.dp))
+                    StatBar("Sp.Defense", specialDefense, typeColor)
+                    Spacer(modifier = Modifier.height(8.dp))
+                    StatBar("Speed", speed, typeColor)
+                    Spacer(modifier = Modifier.height(5.dp))
                 }
             }
         }
@@ -463,7 +473,7 @@ fun StatBar(label: String, value: Int?, color: Color) {
         Text(
             text = label,
             fontWeight = FontWeight.Bold,
-            modifier = Modifier.width(40.dp),
+            modifier = Modifier.width(85.dp),
             fontSize = 14.sp
         )
         Text(

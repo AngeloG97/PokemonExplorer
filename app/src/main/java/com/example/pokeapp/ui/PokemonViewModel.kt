@@ -16,18 +16,27 @@ class PokemonViewModel : ViewModel() {
     private val repository = PokemonRepository()
 
     val types = listOf(
-        "fire", "water", "grass", "electric", "dragon",
-        "psychic", "ghost", "dark", "steel", "fairy"
+        "normal", "fire", "water", "electric", "grass", "ice", "fighting",
+        "poison", "ground", "flying", "psychic", "bug", "rock", "ghost",
+        "dragon", "dark", "steel", "fairy"
     )
 
     val typeColors = mapOf(
+        "normal" to 0xFFA8A77A,
         "fire" to 0xFFEE8130,
         "water" to 0xFF6390F0,
-        "grass" to 0xFF7AC74C,
         "electric" to 0xFFF7D02C,
-        "dragon" to 0xFF6F35FC,
+        "grass" to 0xFF7AC74C,
+        "ice" to 0xFF96D9D6,
+        "fighting" to 0xFFC22E28,
+        "poison" to 0xFFA33EA1,
+        "ground" to 0xFFE2BF65,
+        "flying" to 0xFFA98FF3,
         "psychic" to 0xFFF95587,
+        "bug" to 0xFFA6B91A,
+        "rock" to 0xFFB6A136,
         "ghost" to 0xFF735797,
+        "dragon" to 0xFF6F35FC,
         "dark" to 0xFF705746,
         "steel" to 0xFFB7B7CE,
         "fairy" to 0xFFD685AD
